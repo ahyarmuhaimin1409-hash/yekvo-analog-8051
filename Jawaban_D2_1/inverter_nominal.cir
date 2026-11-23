@@ -1,0 +1,20 @@
+D2.1 CMOS inverter
+VDD dd 0 5
+VIN in 0 DC 0 PULSE(0 5 100n 1n 1n 3u 7u)
+MN out in 0 0 NM W=10u L=1u
+MP out in dd dd PM W=20u L=1u
+.model NM NMOS(level=1 VTO=0.8 KP=100u LAMBDA=0.04)
+.model PM PMOS(level=1 VTO=-0.8 KP=50u LAMBDA=0.04)
+CL out 0 100p
+.temp 27
+.options reltol=1e-6
+.control
+set wr_singlescale
+set numdgt=12
+dc VIN 0 5 0.0025
+wrdata dc.dat v(out)
+tran 0.2n 6.9u
+wrdata tr.dat v(in) v(out) i(VDD)
+quit
+.endc
+.end

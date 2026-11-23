@@ -1,0 +1,97 @@
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/spice2poly.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/spice2poly.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/spice2poly.cm couldn't be loaded!
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/analog.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/analog.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/analog.cm couldn't be loaded!
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/digital.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/digital.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/digital.cm couldn't be loaded!
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/xtradev.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/xtradev.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/xtradev.cm couldn't be loaded!
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/xtraevt.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/xtraevt.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/xtraevt.cm couldn't be loaded!
+Error opening code model "/usr/lib/x86_64-linux-gnu/ngspice/table.cm"
+: /usr/lib/x86_64-linux-gnu/ngspice/table.cm: cannot open shared object file: No such file or directory
+Error: Library /usr/lib/x86_64-linux-gnu/ngspice/table.cm couldn't be loaded!
+
+Note: No compatibility mode selected!
+
+
+Circuit: d1.4 - at89s52 p0 conceptual open-drain gpio
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+g                                            5
+sr1000c20                                    5
+r1000c20                              0.123821
+sr4700c20                                    5
+r4700c20                             0.0265426
+sr10000c20                                   5
+r10000c20                            0.0124883
+sr1000c100                                   5
+r1000c100                             0.123821
+sr4700c100                                   5
+r4700c100                            0.0265426
+sr10000c100                                  5
+r10000c100                           0.0124883
+sr1000c1000                                  5
+r1000c1000                            0.123821
+sr4700c1000                                  5
+r4700c1000                           0.0265426
+sr10000c1000                                 5
+r10000c1000                          0.0124883
+floating                                     0
+pp                                           0
+bpp#branch                                   0
+vr10000c1000#branch               -0.000498751
+vr4700c1000#branch                 -0.00105818
+vr1000c1000#branch                 -0.00487618
+vr10000c100#branch                -0.000498751
+vr4700c100#branch                  -0.00105818
+vr1000c100#branch                  -0.00487618
+vr10000c20#branch                 -0.000498751
+vr4700c20#branch                   -0.00105818
+vr1000c20#branch                   -0.00487618
+vg#branch                                    0
+
+ Reference value :  3.83808e-05
+No. of Data Rows : 51019
+sink_r1000c20       =  -4.876179e-03
+rise_r1000c20       =  4.393692e-08 targ=  1.045586e-06 trig=  1.001649e-06
+vih_r1000c20        =  9.053242e-09 targ=  1.009103e-06 trig=  1.000050e-06
+sink_r4700c20       =  -1.058182e-03
+rise_r4700c20       =  2.065368e-07 targ=  1.215982e-06 trig=  1.009446e-06
+vih_r4700c20        =  4.442680e-08 targ=  1.044477e-06 trig=  1.000050e-06
+sink_r10000c20      =  -4.987512e-04
+rise_r10000c20      =  4.394441e-07 targ=  1.460058e-06 trig=  1.020613e-06
+vih_r10000c20       =  9.509848e-08 targ=  1.095148e-06 trig=  1.000050e-06
+sink_r1000c100      =  -4.876179e-03
+rise_r1000c100      =  2.197197e-07 targ=  1.227789e-06 trig=  1.008069e-06
+vih_r1000c100       =  4.528688e-08 targ=  1.045337e-06 trig=  1.000050e-06
+sink_r4700c100      =  -1.058182e-03
+rise_r4700c100      =  1.032695e-06 targ=  2.079754e-06 trig=  1.047059e-06
+vih_r4700c100       =  2.221659e-07 targ=  1.222216e-06 trig=  1.000050e-06
+sink_r10000c100     =  -4.987512e-04
+rise_r10000c100     =  2.197225e-06 targ=  3.300125e-06 trig=  1.102900e-06
+vih_r10000c100      =  4.755257e-07 targ=  1.475576e-06 trig=  1.000050e-06
+sink_r1000c1000     =  -4.876179e-03
+rise_r1000c1000     =  2.197224e-06 targ=  3.277549e-06 trig=  1.080325e-06
+vih_r1000c1000      =  4.529498e-07 targ=  1.453000e-06 trig=  1.000050e-06
+sink_r4700c1000     =  -1.058182e-03
+rise_r4700c1000     =  1.032696e-05 targ=  1.179717e-05 trig=  1.470218e-06
+vih_r4700c1000      =  2.221742e-06 targ=  3.221792e-06 trig=  1.000050e-06
+sink_r10000c1000    =  -4.987512e-04
+rise_r10000c1000    =  2.197225e-05 targ=  2.400088e-05 trig=  2.028638e-06
+vih_r10000c1000     =  4.755341e-06 targ=  5.755391e-06 trig=  1.000050e-06
+fault_end           =  -1.499999e-15
+Note: Simulation executed from .control section 

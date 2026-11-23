@@ -1,0 +1,12 @@
+Filter RC - T03-F
+Vin in 0 AC 1
+R1 in out 1k
+C1 out 0 159n
+Rload out 0 1k
+.control
+ac lin 3 900 1100
+let gain = mag(v(out)/v(in))
+meas ac gain_1khz FIND gain AT=1000
+quit
+.endc
+.end

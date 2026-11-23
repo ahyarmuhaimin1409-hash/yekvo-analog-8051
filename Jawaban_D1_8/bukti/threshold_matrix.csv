@@ -1,0 +1,6 @@
+﻿skenario,output,input,V_driver_V,V_rx_V,IOH_uA,IOL_mA,VOH_min_V,VOL_max_V,VIH_min_V,VIL_max_V,NMH_V,NML_V,keputusan,kondisi,sumber
+DC,C8051F330 P0.0,AT89S52 P0.0,3.3,5,-3000,8.5,2.6,0.6,1.9,0.9,0.7,0.3,lulus bersyarat,push-pull; P0 latch=1 tanpa pull-up eksternal/bus; GND bersama; -40..85 C; total beban sesuai batas arus,AT89S52 doc1919 sec.27 p.29; C8051F33x rev.1.7 table 14.1 p.134
+DC,C8051F330 P0.0,AT89S52 P0.0,2.7,5,-3000,8.5,2.0,0.6,1.9,0.9,0.1,0.3,lulus bersyarat,push-pull; P0 latch=1 tanpa pull-up eksternal/bus; GND bersama; -40..85 C; total beban sesuai batas arus,AT89S52 doc1919 sec.27 p.29; C8051F33x rev.1.7 table 14.1 p.134
+DC,C8051F330 P0.0,AT89S52 P0.0,2.7,5.5,-3000,8.5,2.0,0.6,2.0,1.0,0.0,0.4,tanpa cadangan HIGH,push-pull; P0 latch=1 tanpa pull-up eksternal/bus; GND bersama; -40..85 C; total beban sesuai batas arus,AT89S52 doc1919 sec.27 p.29; C8051F33x rev.1.7 table 14.1 p.134
+arah balik,AT89S52 P1.0,C8051F330 P0.0,5,3.3,-60,1.6,2.4,0.45,2,0.8,0.4,0.35,lulus bersyarat,input digital F330 open-drain latch=1 weak pull-up off; maksimum input 5 V; GND bersama; -40..85 C,AT89S52 doc1919 sec.27 p.29; C8051F33x rev.1.7 table 14.1 p.134
+beban tanpa jaminan,C8051F330 P0.0,AT89S52 P0.0,3.3,5,-10000,25,,,1.9,0.9,,,tidak dinilai,push-pull; pada arus ini VOH dan VOL hanya tipikal,AT89S52 doc1919 sec.27 p.29; C8051F33x rev.1.7 table 14.1 p.134

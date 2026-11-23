@@ -1,0 +1,13 @@
+Pengisian RC pada pin GPIO yang dilepas - desain
+.param RP=5.1k CL=200p
+Vcc supply 0 5
+Rpull supply pin {RP}
+Cload pin 0 {CL} IC=0
+.tran 1n 5u UIC
+.control
+run
+meas tran t3 WHEN v(pin)=3 RISE=1
+wrdata desain.dat v(pin)
+quit 0
+.endc
+.end

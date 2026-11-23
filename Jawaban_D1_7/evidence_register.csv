@@ -1,0 +1,13 @@
+﻿ID,klaim,lokasi_datasheet,dokumen,tautan_halaman
+E01,"F330 memiliki ADC0, CP0 dan IDA0. ADC0 ada pada F330/332/334; IDA0 hanya pada F330 dalam keluarga ini.",Tabel 1.1; Gbr. 1.1; judul bab 5 dan 6,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=18
+E02,Pemilihan kanal pin dan GND; format single-ended dan diferensial.,"§5.1, Gbr. 5.1; definisi SFR 5.1–5.2, hlm. 47–48",Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=41
+E03,Tracking dan waktu settling bergantung pada resistansi sumber ditambah RMUX.,§5.3.2–5.3.3; Pers. 5.1; Gbr. 5.4,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=46
+E04,"Batas tegangan pin, rentang ADC, waktu akuisisi minimum, dan throughput.",Tabel 5.1,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=55
+E05,"Trigger, clock SAR, alignment dan register data.","§5.3; definisi SFR ADC0CF, ADC0H, ADC0L dan ADC0CN, hlm. 49–51",Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=49
+E06,Pilihan referensi pin/buffer internal/VDD dan nilai buffer internal.,"§7; REF0CN; Tabel 7.1, hlm. 61–63",Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=61
+E07,"MUX terpisah CP0, kanal positif/negatif, flag dan interrupt.","Gbr. 8.1; CPT0CN/CPT0MX/CPT0MD, hlm. 65–69",Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=65
+E08,"Rentang input, histeresis, offset dan waktu respons CP0.",Tabel 8.1,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=70
+E09,"IDA0 di P0.1, rentang arus, pemetaan kode, batas tegangan keluaran.","§6; Gbr. 6.2; Tabel 6.1, hlm. 57–60",Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=57
+E10,Pemilihan mode analog dan pengecualian pin dari crossbar.,§14.3; register PnMDIN dan PnSKIP,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=129
+E11,"AT89S52: diagram blok dan daftar periferal tidak memuat ADC, DAC arus, ataupun komparator analog terintegrasi.","Features hlm. 1; Gbr. 2-1, diagram blok",AT89S52 doc1919,https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/doc1919.pdf#page=3
+E12,Sensor suhu internal dapat dipilih oleh AMX0P; TEMPE mengaktifkan sensor.,§5.2; Gbr. 5.2; REF0CN hlm. 62,Silicon Labs C8051F33x Rev. 1.7,https://www.silabs.com/documents/public/data-sheets/C8051F33x.pdf#page=42

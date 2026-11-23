@@ -1,0 +1,26 @@
+OK: 2 simulasi, CSV, plot dan pengujian salah node.
+OK: 2 simulasi, CSV, plot dan pengujian salah node.
+Run ulang otomatis pada host yang sama, folder input baru tanpa hasil awal, environment proses dan HOME terisolasi. Python sistem dan paket sistem terpisah, executable ngspice yang sama. Tidak melibatkan engineer kedua.
+Perintah run ulang: python3 run.py
+$ ngspice -v
+******
+** ngspice-44.2 : Circuit level simulation program
+** Compiled with KLU Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2024, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sun Jan 12 08:19:15 UTC 2025
+******
+$ python --version
+Python 3.13.5
+$ python -c "import numpy,matplotlib,platform; print('numpy',numpy.__version__); print('matplotlib',matplotlib.__version__); print(platform.platform()); print(platform.freedesktop_os_release()['PRETTY_NAME'] if platform.system()=='Linux' else platform.system())"
+numpy 2.2.4
+matplotlib 3.10.1+dfsg1
+Linux-6.18.57-x86_64-with-glibc2.41
+Debian GNU/Linux 13 (trixie)
+trace_20pF.csv: identik pada kedua run; SHA-256 = b2bdfbc4093dad7e5fb48c387604ec1f92d53ddeb02e3a7f5e59f19c7f4b4e54
+trace_100pF.csv: identik pada kedua run; SHA-256 = efbbdc0ba26cc95189bbf4d4df1306e02b2d5e5cfd9637ca85ef990cc21a50f4
+delays.csv: identik pada kedua run; SHA-256 = 6792832641e8a4a2b6a31ef6e2b0d46da48fb668c79142eca13d1a97d3383242
+Grafik berhasil digambar ulang dari CSV.

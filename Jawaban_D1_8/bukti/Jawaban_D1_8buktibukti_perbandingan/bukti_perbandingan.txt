@@ -1,0 +1,11 @@
+﻿D1.6 - Pengulangan mandiri pada komputer yang sama
+Waktu pemeriksaan: 2026-11-22 14:03:08
+Run pertama: C:\Users\LENOVO\Downloads\Tugas Pertama\Jawaban_D1_6
+Cload_pF,tPHL_ns,tPLH_ns
+20,5.36195,5.36095
+100,25.9305,25.7719
+Run kedua: C:\Users\LENOVO\Downloads\Tugas Pertama\D16_rerun_20261122_135812
+Cload_pF,tPHL_ns,tPLH_ns
+20,5.36195,5.36095
+100,25.9305,25.7719
+Hasil: COCOK untuk seluruh baris delays.csv

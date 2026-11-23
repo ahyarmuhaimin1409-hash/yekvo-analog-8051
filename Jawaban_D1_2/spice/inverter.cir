@@ -1,0 +1,31 @@
+D1.2 - CMOS inverter, 3 isolated loads with a common stimulus
+.temp 27
+.options reltol=1e-6 abstol=1e-14 vntol=1e-8
+.model NMOD NMOS (level=1 vto=0.8 kp=100u lambda=0.02)
+.model PMOD PMOS (level=1 vto=-0.8 kp=50u lambda=0.02)
+.subckt inv in out vp vn params: wp=2u
+MP out in vp vp PMOD W={wp} L=1u
+MN out in vn vn NMOD W=1u L=1u
+CL out 0 20p
+.ends inv
+VIN in 0 DC 0 PULSE(0 5 10n 10n 10n 1u 2.5u)
+VBASE vb 0 5
+VWEAK vw 0 5
+VSTRONG vs 0 5
+VSENSE vn 0 0
+XBASE in out vb vn inv wp=2u
+XWEAK in weak vw 0 inv wp=1u
+XSTRONG in strong vs 0 inv wp=4u
+.control
+set wr_singlescale
+set numdgt=12
+dc VIN 0 5 0.001
+let ib = -i(VBASE)
+let iw = -i(VWEAK)
+let istr = -i(VSTRONG)
+wrdata results/dc.dat v(out) v(weak) v(strong) ib iw istr
+tran 0.1n 2u 0 0.1n
+let ib = -i(VBASE)
+wrdata results/tran.dat v(in) v(out) ib i(VSENSE)
+.endc
+.end

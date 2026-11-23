@@ -1,0 +1,9 @@
+skenario,C_uF,tau_ms,awal_evaluasi_ms,t_VCC_valid_ms,t_assert50_ms,t_release50_ms,pulsa50_ms,RST_peak_V,clock_siap_asumsi_ms,akhir_HIGH_terjamin_ms,overlap_HIGH_clock_us,t_LOW_terjamin_ms,status_2us
+fast_ramp,1,10.090909,0,0.8,0,6.445507,6.445507,4.2885,8.8,3.050207,0,16.754832,tidak terbukti
+fast_ramp,10,100.909091,0,0.8,0,59.914206,59.914206,4.482257,8.8,25.961203,17161.20316,163.007451,memenuhi model
+slow_ramp,1,10.090909,0,80.0,0,13.328754,13.328754,0.454514,88.0,,0,80.0,tidak terbukti
+slow_ramp,10,100.909091,0,80.0,0,113.509572,113.509572,2.858136,88.0,,0,216.602818,tidak terbukti
+short_dip,1,10.090909,10.21,10.215,,,0,0.27603,18.215,,0,10.215,tidak terbukti
+short_dip,10,100.909091,10.21,10.215,,,0,0.030307,18.215,,0,10.215,tidak terbukti
+quick_restart,1,10.090909,10.21,10.218,,,0,0.780922,18.218,,0,10.218,tidak terbukti
+quick_restart,10,100.909091,10.21,10.218,,,0,0.085877,18.218,,0,10.218,tidak terbukti

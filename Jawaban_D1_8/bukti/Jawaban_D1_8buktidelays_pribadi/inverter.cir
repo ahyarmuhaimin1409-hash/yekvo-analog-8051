@@ -1,0 +1,19 @@
+D1.6 CMOS inverter - transient
+VDD dd 0 5
+VIN in 0 PULSE(0 5 10n 1n 1n 150n 320n)
+MN out in 0 0 NM W=10u L=1u
+MP out in dd dd PM W=20u L=1u
+.model NM NMOS(level=1 VTO=0.8 KP=100u LAMBDA=0.04)
+.model PM PMOS(level=1 VTO=-0.8 KP=50u LAMBDA=0.04)
+Cload out 0 20p
+.temp 27
+.control
+set wr_singlescale
+set numdgt=12
+tran 0.1n 310n
+wrdata trace.dat v(in) v(out)
+meas tran tphl trig v(in) val=2.5 rise=1 targ v(out) val=2.5 fall=1
+meas tran tplh trig v(in) val=2.5 fall=1 targ v(out) val=2.5 rise=1
+quit
+.endc
+.end

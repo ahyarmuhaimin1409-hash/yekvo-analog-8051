@@ -1,0 +1,5 @@
+﻿issue_id,test_id,domain,owner,reviewer,perubahan_parameter,status_issue,label_reproduksi,commit_awal,perintah,bukti_awal_owner,bukti_awal_reviewer,ketidakcocokan_atau_temuan,tanggapan_owner,revisi_klaim_atau_bukti,commit_uji_ulang,bukti_uji_ulang,keputusan_reviewer
+I01,T01-F,power,Ahyar Muhaemin,Kuntjoro Pinardi,Geser waktu clock siap ke 7 µs; bentuk RST tetap,DRAF,,,,,,,,,,,
+I02,T02-F,GPIO,Ahyar Muhaemin,Kuntjoro Pinardi,Naikkan kapasitansi beban ke 200 pF,DRAF,,,,,,,,,,,
+I03,T03-F,filter,Ahyar Muhaemin,Kuntjoro Pinardi,Pasang beban resistif 1 kΩ paralel dengan C,DRAF,,,,,,,,,,,
+I04,T04-F,ADC,Ahyar Muhaemin,Kuntjoro Pinardi,"Naikkan Vref 1% ke 2,424 V; Vin tetap",DRAF,,,,,,,,,,,

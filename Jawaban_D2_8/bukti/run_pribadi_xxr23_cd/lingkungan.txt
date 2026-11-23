@@ -1,0 +1,17 @@
+Python 3.13.3, numpy 2.3.0, matplotlib 3.10.3
+******
+** ngspice-47 : Circuit level simulation program
+** Compiled with KLU Direct Linear Solver
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2026, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at https://ngspice.sourceforge.io/bugrep.html
+** Creation Date: Aug 11 2026   13:55:25
+******
+
+C:\Users\LENOVO\Downloads\ngspice-47_64\Spice64\bin\ngspice_con.exe -b -o pullup.log pullup.cir
+
+C:\Users\LENOVO\Downloads\ngspice-47_64\Spice64\bin\ngspice_con.exe -b -o beban.log beban.cir
+
+C:\Users\LENOVO\Downloads\ngspice-47_64\Spice64\bin\ngspice_con.exe -b -o desain.log desain.cir

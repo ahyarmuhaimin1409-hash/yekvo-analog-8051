@@ -1,0 +1,16 @@
+D2.3 - fast_ramp, 10 uF
+VDD dd 0 PWL(0 0 1m 5)
+Cc dd x 10u
+Rs x rst 1k
+Rext rst 0 10k
+Rint rst 0 100k
+Dclamp 0 rst DM
+.model DM D(IS=1n N=1)
+.temp 27
+.control
+set numdgt=12
+set wr_singlescale
+tran 2u 380m
+wrdata wave.dat v(dd) v(rst)
+.endc
+.end

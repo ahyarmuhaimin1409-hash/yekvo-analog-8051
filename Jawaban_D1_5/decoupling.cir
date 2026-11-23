@@ -1,0 +1,18 @@
+D1.5 - Perbandingan VCC lokal tanpa dan dengan decoupling
+Vsrc supply 0 DC 5
+
+* Kasus A: tanpa kapasitor lokal
+Ra supply vcc_a 2
+Ia vcc_a 0 PULSE(0 20m 10u 10n 10n 100n 5u)
+
+* Kasus B: dengan kapasitor lokal 100 nF
+Rb supply vcc_b 2
+Ib vcc_b 0 PULSE(0 20m 10u 10n 10n 100n 5u)
+Cdec vcc_b 0 100n
+
+.control
+tran 1n 12u
+meas tran vmin_tanpa MIN v(vcc_a) FROM=10u TO=12u
+meas tran vmin_dengan MIN v(vcc_b) FROM=10u TO=12u
+.endc
+.end

@@ -1,0 +1,62 @@
+﻿part,kemasan,pin,nama,fungsi,fungsi_alternatif,sumber_halaman,confidence
+AT89S52-24PU,PDIP-40,1,P1.0,GPIO dengan pull-up internal,T2 / clock-out,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,2,P1.1,GPIO dengan pull-up internal,T2EX,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,3,P1.2,GPIO dengan pull-up internal,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,4,P1.3,GPIO dengan pull-up internal,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,5,P1.4,GPIO dengan pull-up internal,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,6,P1.5,GPIO dengan pull-up internal,MOSI (ISP),"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,7,P1.6,GPIO dengan pull-up internal,MISO (ISP),"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,8,P1.7,GPIO dengan pull-up internal,SCK (ISP),"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,9,RST,Reset aktif HIGH,Keluaran reset watchdog,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,10,P3.0,GPIO dengan pull-up internal,RXD,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,11,P3.1,GPIO dengan pull-up internal,TXD,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,12,P3.2,GPIO dengan pull-up internal,/INT0,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,13,P3.3,GPIO dengan pull-up internal,/INT1,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,14,P3.4,GPIO dengan pull-up internal,T0,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,15,P3.5,GPIO dengan pull-up internal,T1,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,16,P3.6,GPIO dengan pull-up internal,/WR,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,17,P3.7,GPIO dengan pull-up internal,/RD,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,18,XTAL2,Keluaran penguat osilator,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,19,XTAL1,Masukan penguat osilator,Clock eksternal,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,20,GND,Ground,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,21,P2.0,GPIO dengan pull-up internal,A8,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,22,P2.1,GPIO dengan pull-up internal,A9,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,23,P2.2,GPIO dengan pull-up internal,A10,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,24,P2.3,GPIO dengan pull-up internal,A11,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,25,P2.4,GPIO dengan pull-up internal,A12,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,26,P2.5,GPIO dengan pull-up internal,A13,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,27,P2.6,GPIO dengan pull-up internal,A14,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,28,P2.7,GPIO dengan pull-up internal,A15,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,29,/PSEN,Strobe baca program eksternal,,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,30,ALE,Latch alamat,/PROG,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,31,/EA,Pemilihan memori program,VPP,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,32,P0.7,GPIO open-drain,AD7,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,33,P0.6,GPIO open-drain,AD6,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,34,P0.5,GPIO open-drain,AD5,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,35,P0.4,GPIO open-drain,AD4,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,36,P0.3,GPIO open-drain,AD3,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,37,P0.2,GPIO open-drain,AD2,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,38,P0.1,GPIO open-drain,AD1,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,39,P0.0,GPIO open-drain,AD0,"A2,4–6",tinggi
+AT89S52-24PU,PDIP-40,40,VCC,Catu positif,,"A2,4–6",tinggi
+C8051F330-GM,QFN-20,1,P0.0,GPIO digital / masukan analog,VREF,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,2,GND,Ground,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,3,VDD,Catu positif,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,4,/RST,Reset aktif LOW; keluaran open-drain,C2CK,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,5,P2.0,GPIO digital,C2D,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,6,P1.7,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,7,P1.6,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,8,P1.5,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,9,P1.4,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,10,P1.3,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,11,P1.2,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,12,P1.1,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,13,P1.0,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,14,P0.7,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,15,P0.6,GPIO digital / masukan analog,CNVSTR,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,16,P0.5,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,17,P0.4,GPIO digital / masukan analog,,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,18,P0.3,GPIO digital / masukan analog,XTAL2,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,19,P0.2,GPIO digital / masukan analog,XTAL1,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,20,P0.1,GPIO digital / masukan analog,IDA0,"S35–37,123–125",tinggi
+C8051F330-GM,QFN-20,Pad tengah,GND,Ground,,"S35–37,123–125",tinggi

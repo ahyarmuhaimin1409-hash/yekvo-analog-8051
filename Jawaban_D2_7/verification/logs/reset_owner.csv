@@ -1,0 +1,3 @@
+test_id,clock_siap_us,rst_berakhir_us,durasi_us,hasil_desain
+T01-B,5,8,3,LULUS
+T01-F,7,8,1,GAGAL

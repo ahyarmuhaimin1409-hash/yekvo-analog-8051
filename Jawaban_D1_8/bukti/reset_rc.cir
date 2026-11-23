@@ -1,0 +1,32 @@
+D1.5 - RC reset AT89S52, hypothetical pin and clock
+* x = capacitor side; 1k limits current in the illustrative lower clamp
+.subckt reset v rst
+Ccouple v x 1u
+Rseries x rst 1k
+Rext rst 0 10k
+Rinternal rst 0 100k
+Dlower 0 rst Dexample
+.ends
+.model Dexample D(IS=1n N=1)
+Vfast vf 0 PWL(0 0 1m 5)
+Vslow vs 0 PWL(0 0 100m 5)
+* Fault circuits initially powered in DC steady state, capacitor charged
+Vdip vd 0 PWL(0 5 10m 5 10.01m 3 10.21m 3 10.22m 5)
+Vcycle vc 0 PWL(0 5 10m 5 10.01m 0 10.21m 0 10.22m 5)
+Xf vf rf reset
+Xs vs rs reset
+Xd vd rd reset
+Xc vc rc reset
+* A positive difference means reset asserted in the hypothetical detector
+Bfast df 0 V=v(rf)-0.5*v(vf)
+Bslow ds 0 V=v(rs)-0.5*v(vs)
+.control
+tran 2u 120m
+meas tran release_fast WHEN v(df)=0 FALL=1
+meas tran release_slow WHEN v(ds)=0 FALL=1
+meas tran vmax_dip MAX v(rd) FROM=10.21m TO=12m
+meas tran vmax_cycle MAX v(rc) FROM=10.21m TO=12m
+* Interactive: plot v(vf) v(rf) 0.5*v(vf)
+* Interactive: plot v(vs) v(rs) 0.5*v(vs)
+.endc
+.end

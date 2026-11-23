@@ -1,0 +1,108 @@
+D2.2 - open-drain AT89S52 P0 conceptual model
+VG g 0 PULSE(5 0 1u 0.1n 0.1n 500u 1m)
+.model ND NMOS(level=1 VTO=1 KP=0.01 LAMBDA=0)
+.temp 27
+Vr1000c20 sr1000c20 0 5
+Rr1000c20 sr1000c20 r1000c20 1000
+Mr1000c20 r1000c20 g 0 0 ND W=10u L=10u
+Cr1000c20 r1000c20 0 20p
+Vr1000c100 sr1000c100 0 5
+Rr1000c100 sr1000c100 r1000c100 1000
+Mr1000c100 r1000c100 g 0 0 ND W=10u L=10u
+Cr1000c100 r1000c100 0 100p
+Vr1000c1000 sr1000c1000 0 5
+Rr1000c1000 sr1000c1000 r1000c1000 1000
+Mr1000c1000 r1000c1000 g 0 0 ND W=10u L=10u
+Cr1000c1000 r1000c1000 0 1000p
+Vr4700c20 sr4700c20 0 5
+Rr4700c20 sr4700c20 r4700c20 4700
+Mr4700c20 r4700c20 g 0 0 ND W=10u L=10u
+Cr4700c20 r4700c20 0 20p
+Vr4700c100 sr4700c100 0 5
+Rr4700c100 sr4700c100 r4700c100 4700
+Mr4700c100 r4700c100 g 0 0 ND W=10u L=10u
+Cr4700c100 r4700c100 0 100p
+Vr4700c1000 sr4700c1000 0 5
+Rr4700c1000 sr4700c1000 r4700c1000 4700
+Mr4700c1000 r4700c1000 g 0 0 ND W=10u L=10u
+Cr4700c1000 r4700c1000 0 1000p
+Vr10000c20 sr10000c20 0 5
+Rr10000c20 sr10000c20 r10000c20 10000
+Mr10000c20 r10000c20 g 0 0 ND W=10u L=10u
+Cr10000c20 r10000c20 0 20p
+Vr10000c100 sr10000c100 0 5
+Rr10000c100 sr10000c100 r10000c100 10000
+Mr10000c100 r10000c100 g 0 0 ND W=10u L=10u
+Cr10000c100 r10000c100 0 100p
+Vr10000c1000 sr10000c1000 0 5
+Rr10000c1000 sr10000c1000 r10000c1000 10000
+Mr10000c1000 r10000c1000 g 0 0 ND W=10u L=10u
+Cr10000c1000 r10000c1000 0 1000p
+Vr4700c4700 sr4700c4700 0 5
+Rr4700c4700 sr4700c4700 r4700c4700 4700
+Mr4700c4700 r4700c4700 g 0 0 ND W=10u L=10u
+Cr4700c4700 r4700c4700 0 4700p
+.control
+tran 0.5n 300u
+meas tran lo_r1000c20 find v(r1000c20) at=0.5u
+meas tran ii_r1000c20 find i(Vr1000c20) at=0.5u
+meas tran hi_r1000c20 find v(r1000c20) at=299u
+meas tran ts_r1000c20 find v(r1000c20) at=5.00005u
+meas tran tt_r1000c20 trig v(g) val=2.5 fall=1 targ v(r1000c20) val=3.5 rise=1
+meas tran th_r1000c20 trig v(g) val=2.5 fall=1 targ v(r1000c20) val=1.9 rise=1
+meas tran lo_r1000c100 find v(r1000c100) at=0.5u
+meas tran ii_r1000c100 find i(Vr1000c100) at=0.5u
+meas tran hi_r1000c100 find v(r1000c100) at=299u
+meas tran ts_r1000c100 find v(r1000c100) at=5.00005u
+meas tran tt_r1000c100 trig v(g) val=2.5 fall=1 targ v(r1000c100) val=3.5 rise=1
+meas tran th_r1000c100 trig v(g) val=2.5 fall=1 targ v(r1000c100) val=1.9 rise=1
+meas tran lo_r1000c1000 find v(r1000c1000) at=0.5u
+meas tran ii_r1000c1000 find i(Vr1000c1000) at=0.5u
+meas tran hi_r1000c1000 find v(r1000c1000) at=299u
+meas tran ts_r1000c1000 find v(r1000c1000) at=5.00005u
+meas tran tt_r1000c1000 trig v(g) val=2.5 fall=1 targ v(r1000c1000) val=3.5 rise=1
+meas tran th_r1000c1000 trig v(g) val=2.5 fall=1 targ v(r1000c1000) val=1.9 rise=1
+meas tran lo_r4700c20 find v(r4700c20) at=0.5u
+meas tran ii_r4700c20 find i(Vr4700c20) at=0.5u
+meas tran hi_r4700c20 find v(r4700c20) at=299u
+meas tran ts_r4700c20 find v(r4700c20) at=5.00005u
+meas tran tt_r4700c20 trig v(g) val=2.5 fall=1 targ v(r4700c20) val=3.5 rise=1
+meas tran th_r4700c20 trig v(g) val=2.5 fall=1 targ v(r4700c20) val=1.9 rise=1
+meas tran lo_r4700c100 find v(r4700c100) at=0.5u
+meas tran ii_r4700c100 find i(Vr4700c100) at=0.5u
+meas tran hi_r4700c100 find v(r4700c100) at=299u
+meas tran ts_r4700c100 find v(r4700c100) at=5.00005u
+meas tran tt_r4700c100 trig v(g) val=2.5 fall=1 targ v(r4700c100) val=3.5 rise=1
+meas tran th_r4700c100 trig v(g) val=2.5 fall=1 targ v(r4700c100) val=1.9 rise=1
+meas tran lo_r4700c1000 find v(r4700c1000) at=0.5u
+meas tran ii_r4700c1000 find i(Vr4700c1000) at=0.5u
+meas tran hi_r4700c1000 find v(r4700c1000) at=299u
+meas tran ts_r4700c1000 find v(r4700c1000) at=5.00005u
+meas tran tt_r4700c1000 trig v(g) val=2.5 fall=1 targ v(r4700c1000) val=3.5 rise=1
+meas tran th_r4700c1000 trig v(g) val=2.5 fall=1 targ v(r4700c1000) val=1.9 rise=1
+meas tran lo_r10000c20 find v(r10000c20) at=0.5u
+meas tran ii_r10000c20 find i(Vr10000c20) at=0.5u
+meas tran hi_r10000c20 find v(r10000c20) at=299u
+meas tran ts_r10000c20 find v(r10000c20) at=5.00005u
+meas tran tt_r10000c20 trig v(g) val=2.5 fall=1 targ v(r10000c20) val=3.5 rise=1
+meas tran th_r10000c20 trig v(g) val=2.5 fall=1 targ v(r10000c20) val=1.9 rise=1
+meas tran lo_r10000c100 find v(r10000c100) at=0.5u
+meas tran ii_r10000c100 find i(Vr10000c100) at=0.5u
+meas tran hi_r10000c100 find v(r10000c100) at=299u
+meas tran ts_r10000c100 find v(r10000c100) at=5.00005u
+meas tran tt_r10000c100 trig v(g) val=2.5 fall=1 targ v(r10000c100) val=3.5 rise=1
+meas tran th_r10000c100 trig v(g) val=2.5 fall=1 targ v(r10000c100) val=1.9 rise=1
+meas tran lo_r10000c1000 find v(r10000c1000) at=0.5u
+meas tran ii_r10000c1000 find i(Vr10000c1000) at=0.5u
+meas tran hi_r10000c1000 find v(r10000c1000) at=299u
+meas tran ts_r10000c1000 find v(r10000c1000) at=5.00005u
+meas tran tt_r10000c1000 trig v(g) val=2.5 fall=1 targ v(r10000c1000) val=3.5 rise=1
+meas tran th_r10000c1000 trig v(g) val=2.5 fall=1 targ v(r10000c1000) val=1.9 rise=1
+meas tran lo_r4700c4700 find v(r4700c4700) at=0.5u
+meas tran ii_r4700c4700 find i(Vr4700c4700) at=0.5u
+meas tran hi_r4700c4700 find v(r4700c4700) at=299u
+meas tran ts_r4700c4700 find v(r4700c4700) at=5.00005u
+meas tran tt_r4700c4700 trig v(g) val=2.5 fall=1 targ v(r4700c4700) val=3.5 rise=1
+meas tran th_r4700c4700 trig v(g) val=2.5 fall=1 targ v(r4700c4700) val=1.9 rise=1
+.endc
+.end

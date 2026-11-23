@@ -1,0 +1,4 @@
+kasus,R_kohm,C_pF,t3_log_us,margin_us,I_LOW_ideal_hitung_mA
+pullup,10,100,0.916291,0.083709,0.5
+beban,10,200,1.83258,-0.83258,0.5
+desain,5.1,200,0.934617,0.065383,0.98039

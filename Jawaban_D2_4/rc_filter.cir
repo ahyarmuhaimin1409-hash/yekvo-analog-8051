@@ -1,0 +1,34 @@
+D2.4 - AFE, sumber Thevenin dan beban 1 Mohm
+Vsensor mid 0 DC 1.5 AC 1 SIN(1.5 0.3 100)
+Vnoise vin mid DC 0 SIN(0 0.02 10k)
+Rff200s0 vin f200s0 10k
+Cff200s0 f200s0 0 7.9577471545948e-08
+Rlf200s0 f200s0 0 1Meg
+Rff1000s0 vin f1000s0 10k
+Cff1000s0 f1000s0 0 1.591549430919e-08
+Rlf1000s0 f1000s0 0 1Meg
+Rff5000s0 vin f5000s0 10k
+Cff5000s0 f5000s0 0 3.1830988618379e-09
+Rlf5000s0 f5000s0 0 1Meg
+Rsf200s10000 vin srcf200s10000 10k
+Rff200s10000 srcf200s10000 f200s10000 10k
+Cff200s10000 f200s10000 0 7.9577471545948e-08
+Rlf200s10000 f200s10000 0 1Meg
+Rsf1000s10000 vin srcf1000s10000 10k
+Rff1000s10000 srcf1000s10000 f1000s10000 10k
+Cff1000s10000 f1000s10000 0 1.591549430919e-08
+Rlf1000s10000 f1000s10000 0 1Meg
+Rsf5000s10000 vin srcf5000s10000 10k
+Rff5000s10000 srcf5000s10000 f5000s10000 10k
+Cff5000s10000 f5000s10000 0 3.1830988618379e-09
+Rlf5000s10000 f5000s10000 0 1Meg
+.options reltol=1e-7
+.control
+set wr_singlescale
+set numdgt=12
+ac dec 300 1 1Meg
+wrdata ac.dat real(v(f200s0)) imag(v(f200s0)) real(v(f1000s0)) imag(v(f1000s0)) real(v(f5000s0)) imag(v(f5000s0)) real(v(f200s10000)) imag(v(f200s10000)) real(v(f1000s10000)) imag(v(f1000s10000)) real(v(f5000s10000)) imag(v(f5000s10000))
+tran 0.5u 50m 0 0.5u
+wrdata transient.dat v(vin) v(f200s0) v(f1000s0) v(f5000s0) v(f200s10000) v(f1000s10000) v(f5000s10000)
+.endc
+.end
