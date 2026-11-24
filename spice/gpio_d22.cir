@@ -1,0 +1,36 @@
+* YEKVO D2.2 - GPIO Drive, Fanout & Capacitive Fault Test (Teaching Model Only)
+VDD vdd 0 DC 5
+* Pulsa uji: t=0..5u Vin=5V (LOW), t=5u..65u Vin=0V (HIGH)
+VIN in 0 PULSE(5 0 5u 2n 2n 60u 120u)
+
+MN out in 0 0 NM W=20u L=1u
+RP vdd out 1k
+CL out 0 20p
+
+.model NM NMOS (LEVEL=1 VTO=0.8 KP=100u LAMBDA=0.02)
+
+.control
+* 1. Sweep 9 kombinasi standar (1k, 4.7k, 10k x 20p, 100p, 1n)
+foreach rval 1k 4.7k 10k
+  alter rp = $rval
+  foreach cval 20p 100p 1n
+    alter cl = $cval
+    tran 2n 65u
+    let isink = -i(VDD)
+    wrdata results/d22_r{$rval}_c{$cval}.csv v(out) isink
+  end
+end
+
+* 2. Fault Test: Increased Capacitive Loading (Cload = 4.7nF) pada pulsa 100kHz (T_high = 5us)
+alter @vin[pulse] = [ 5 0 2u 2n 2n 5u 10u ]
+alter cl = 4.7n
+foreach rval 1k 4.7k 10k
+  alter rp = $rval
+  tran 5n 25u
+  let isink = -i(VDD)
+  wrdata results/d22_fault_c4.7n_r{$rval}.csv v(in) v(out) isink
+end
+
+quit
+.endc
+.end

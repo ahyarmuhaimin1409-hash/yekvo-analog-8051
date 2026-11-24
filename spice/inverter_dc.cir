@@ -1,0 +1,32 @@
+* YEKVO D1.2 - CMOS Inverter DC Sweep & Switching Point (Native NGspice Plot)
+VDD vdd 0 DC 5
+VIN in 0 DC 0
+
+MP out in vdd vdd PM W=20u L=1u
+MN out in 0 0 NM W=10u L=1u
+CL out 0 20p
+
+.model NM NMOS (LEVEL=1 VTO=0.8 KP=100u LAMBDA=0.02)
+.model PM PMOS (LEVEL=1 VTO=-0.8 KP=50u LAMBDA=0.02)
+
+.control
+set color0=white
+set color1=black
+set xbrushwidth=2
+
+* 1. Baseline Simetris (Wp=20u, Wn=10u) -> dc1
+dc VIN 0 5 0.01
+let idd = -i(VDD)
+wrdata results/inverter_vtc.csv v(in) v(out) idd
+
+* 2. Variasi PMOS Lemah (Wp=10u, Wn=10u) -> dc2
+alter @mp[w] = 10u
+dc VIN 0 5 0.01
+let idd = -i(VDD)
+wrdata results/inverter_vtc_wp10u.csv v(in) v(out) idd
+
+* Plot Overlay di NGspice
+plot dc1.v(out) dc2.v(out) dc1.v(in) title 'D1.2: CMOS Inverter VTC (Wp=20u vs Wp=10u)' xlabel 'Vin (V)' ylabel 'Vout (V)'
+plot dc1.idd dc2.idd title 'D1.2: Arus Supply IDD saat Transisi (Wp=20u vs Wp=10u)' xlabel 'Vin (V)' ylabel 'IDD (A)'
+.endc
+.end

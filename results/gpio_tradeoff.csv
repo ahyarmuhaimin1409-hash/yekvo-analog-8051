@@ -1,0 +1,10 @@
+R_pullup,Cload,VOL_V,Isink_mA,t_70pct_sim_ns,t_70pct_est_ns,BW_3dB_kHz,f_praktis_max_kHz,Evaluasi_Datasheet
+1k,20p,0.560,4.440,24.1,21.7,7957.7,20746.9,PERINGATAN: Melebihi arus uji Port 0 (3.2mA) & VOL > 0.45V
+1k,100p,0.560,4.440,110.1,108.5,1591.5,4541.3,PERINGATAN: Melebihi arus uji Port 0 (3.2mA) & VOL > 0.45V
+1k,1n,0.560,4.440,1086.1,1085.2,159.2,460.4,PERINGATAN: Melebihi arus uji Port 0 (3.2mA) & VOL > 0.45V
+4.7k,20p,0.125,1.037,112.1,110.8,1693.1,4460.3,AMAN & KOMPATIBEL
+4.7k,100p,0.125,1.037,556.1,554.0,338.6,899.1,AMAN & KOMPATIBEL
+4.7k,1n,0.125,1.037,5542.1,5539.6,33.9,90.2,LAMBAT: Hanya aman untuk sinyal < 100 kHz
+10k,20p,0.059,0.494,240.1,238.4,795.8,2082.5,AMAN & KOMPATIBEL
+10k,100p,0.059,0.494,1194.1,1192.1,159.2,418.7,AMAN & KOMPATIBEL
+10k,1n,0.059,0.494,11922.1,11920.7,15.9,41.9,LAMBAT: Hanya aman untuk sinyal < 100 kHz

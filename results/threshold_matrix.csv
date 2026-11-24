@@ -1,0 +1,5 @@
+part,pin_group,vdd_v,condition_current,vil_max_v,vih_min_v,vol_max_v,voh_min_v,nml_v,nmh_v,datasheet_page,status
+AT89S52,Ports 1/2/3,5.0,IOL=1.6mA / IOH=-10uA,0.90,1.90,0.45,4.50,0.45,2.60,29,Kompatibel (beban ringan)
+AT89S52,Ports 1/2/3,5.0,IOL=1.6mA / IOH=-25uA,0.90,1.90,0.45,3.75,0.45,1.85,29,Kompatibel (beban menengah)
+AT89S52,Ports 1/2/3,5.0,IOL=1.6mA / IOH=-60uA,0.90,1.90,0.45,2.40,0.45,0.50,29,Kompatibel (batas arus maks)
+AT89S52,Port 0 (I/O),5.0,IOL=3.2mA / Open-Drain,0.90,1.90,0.45,N/A,0.45,N/A,29,NMH butuh R_pullup eksternal

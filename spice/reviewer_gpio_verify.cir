@@ -1,0 +1,19 @@
+* YEKVO D2.7 - Peer Review Independent Verification (Reviewer C -> Owner B)
+* Menguji rekomendasi utama D2.2 (Rp=4.7k) pada kondisi batas VDD=4.0V & Cload=330pF
+
+VDD vdd 0 DC 4.0
+VIN in 0 PULSE(4.0 0 5u 2n 2n 60u 120u)
+
+MN out in 0 0 NM W=20u L=1u
+RP vdd out 4.7k
+CL out 0 330p
+
+.model NM NMOS (LEVEL=1 VTO=0.8 KP=100u LAMBDA=0.02)
+
+.control
+tran 2n 65u
+let isink = -i(VDD)
+wrdata results/verify_d22_vdd4_c330p.csv v(out) isink
+quit
+.endc
+.end

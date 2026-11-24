@@ -1,0 +1,43 @@
+* YEKVO D1.4 - 8051 Open-Drain GPIO & Pull-Up Sweep (Teaching Model Only)
+VDD vdd 0 DC 5
+
+* Pulsa Gate: t=0..5u Vin=5V (NMOS ON -> Output LOW), t>=5u Vin=0V (NMOS OFF -> Output naik ke HIGH)
+VIN in 0 PULSE(5 0 5u 2n 2n 60u 120u)
+
+* 1. Rangkaian Open-Drain NMOS + Pull-Up Eksternal
+MN out in 0 0 NM W=20u L=1u
+RP vdd out 1k
+CL out 0 20p
+
+* 2. Pembanding Konseptual: Push-Pull Ideal (CMOS Inverter)
+MP_pp out_pp in vdd vdd PM W=20u L=1u
+MN_pp out_pp in 0 0 NM W=10u L=1u
+CL_pp out_pp 0 20p
+
+.model NM NMOS (LEVEL=1 VTO=0.8 KP=100u LAMBDA=0.02)
+.model PM PMOS (LEVEL=1 VTO=-0.8 KP=50u LAMBDA=0.02)
+
+.control
+* Jalankan 9 kombinasi R_pullup (1k, 4.7k, 10k) x C_load (20p, 100p, 1n)
+foreach rval 1k 4.7k 10k
+  alter rp = $rval
+  foreach cval 20p 100p 1n
+    alter cl = $cval
+    alter cl_pp = $cval
+    tran 2n 65u
+    let isink = i(VDD)
+    wrdata results/gpio_r{$rval}_c{$cval}.csv v(out) isink v(out_pp)
+  end
+end
+
+* Fault Test: Tanpa Pull-Up (Floating Node, R=1T Ohm agar matriks SPICE konvergen)
+alter rp = 1e12
+alter cl = 20p
+alter cl_pp = 20p
+tran 2n 65u
+let isink = i(VDD)
+wrdata results/gpio_floating.csv v(out) isink v(out_pp)
+
+quit
+.endc
+.end

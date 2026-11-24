@@ -1,0 +1,82 @@
+* YEKVO D2.1 - CMOS Inverter Stress & Sensitivity (Teaching Model Only)
+VDD vdd 0 DC 5
+* Lebar pulsa diperbesar (500ns) agar Cload=500pF & VDD=3.3V sempat transisi penuh
+VIN in 0 PULSE(0 5 20n 2n 2n 500n 1000n)
+
+MP out in vdd vdd PM W=20u L=1u
+MN out in 0 0 NM W=10u L=1u
+CL out 0 10p
+
+.model NM NMOS (LEVEL=1 VTO=0.8 KP=100u LAMBDA=0.02)
+.model PM PMOS (LEVEL=1 VTO=-0.8 KP=50u LAMBDA=0.02)
+
+.control
+* === BAGIAN 1: DC SWEEP (Sensitivitas VDD & Rasio Wp/Wn) ===
+alter @mp[w] = 20u
+alter @mn[w] = 10u
+foreach vval 5 4 3.3
+  alter vdd = $vval
+  dc VIN 0 $vval 0.01
+  let idd = -i(VDD)
+  wrdata results/d21_dc_vdd{$vval}.csv v(in) v(out) idd
+end
+
+alter vdd = 5
+alter @mp[w] = 10u
+alter @mn[w] = 10u
+dc VIN 0 5 0.01
+let idd = -i(VDD)
+wrdata results/d21_dc_wp10u.csv v(in) v(out) idd
+
+alter @mp[w] = 40u
+alter @mn[w] = 10u
+dc VIN 0 5 0.01
+let idd = -i(VDD)
+wrdata results/d21_dc_wp40u.csv v(in) v(out) idd
+
+* === BAGIAN 2: TRANSIENT SWEEP (VDD x Cload x Rasio Wp/Wn) ===
+alter @mp[w] = 20u
+alter @mn[w] = 10u
+alter cl = 100p
+foreach vval 5 4 3.3
+  alter vdd = $vval
+  alter @vin[pulse] = [ 0 $vval 20n 2n 2n 500n 1000n ]
+  tran 0.5n 1100n
+  let idd = -i(VDD)
+  wrdata results/d21_tran_vdd{$vval}_c100p.csv v(in) v(out) idd
+end
+
+alter vdd = 5
+alter @vin[pulse] = [ 0 5 20n 2n 2n 500n 1000n ]
+foreach cval 10p 100p 500p
+  alter cl = $cval
+  tran 0.5n 1100n
+  let idd = -i(VDD)
+  wrdata results/d21_tran_c{$cval}.csv v(in) v(out) idd
+end
+
+alter cl = 100p
+alter @mp[w] = 10u
+alter @mn[w] = 10u
+tran 0.5n 1100n
+let idd = -i(VDD)
+wrdata results/d21_tran_wp10u.csv v(in) v(out) idd
+
+alter @mp[w] = 40u
+alter @mn[w] = 10u
+tran 0.5n 1100n
+let idd = -i(VDD)
+wrdata results/d21_tran_wp40u.csv v(in) v(out) idd
+
+* === BAGIAN 3: FAULT TEST - INPUT SLEW LAMBAT (tr=tf=40ns) ===
+alter @mp[w] = 20u
+alter @mn[w] = 10u
+alter cl = 100p
+alter @vin[pulse] = [ 0 5 20n 40n 40n 460n 1000n ]
+tran 0.5n 1100n
+let idd = -i(VDD)
+wrdata results/d21_fault_slow_slew.csv v(in) v(out) idd
+
+quit
+.endc
+.end

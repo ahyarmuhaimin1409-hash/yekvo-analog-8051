@@ -1,0 +1,7 @@
+kriteria_penilaian,bobot_maks,skor_diperoleh,bukti_kelulusan,catatan_penilai
+Datasheet & evidence integrity,20,20,"AT89S52 doc1919.pdf Hal. 29 (VIL, VIH, VOL, VOH, batas arus IOL 10mA/pin & 26mA/port); pemisahan tegas AT89S52 vs C8051F330",Seluruh klaim spesifikasi memiliki halaman sumber valid dan bebas dari klaim fitur ADC/DAC palsu.
+Intuitive reasoning & predictions,15,15,Prediksi tertulis sebelum simulasi pada D1.2-D2.2 serta revisi hipotesis tentang trade-off Rp=1k vs Rp=4.7k,"Penalaran fisika (crowbar current, konstanta waktu RC, overdrive VGS-VTO) dijelaskan runtut."
+Simulation & measured metrics,25,25,"6 netlist SPICE (.cir), 6 skrip Python (.py), 30+ file CSV numerik, dan 10 plot grafik teranotasi di results/","Seluruh metrik diukur dengan definisi threshold eksplisit (50% VDD, 10-90%, 70% VDD, -3dB)."
+Fault injection and verification,20,20,"4 fault case owner (D1.3 noise near Vm, D1.4 floating node, D2.1 slow slew 40ns, D2.2 Cload=4.7nF) + audit reviewer Ahyar (verification/)","Seluruh kasus reproducible (selisih 0); uji batas baru reviewer (VDD=4.0V, Cload=330pF) terdokumentasi di issues_log.csv."
+Engineering judgment and defense,20,18,"reviews/final_defense.md, reviews/design_review.md, reviews/gpio_recommendation_memo.md","Trade-off, boundary conditions, dan residual risk model Level-1 dijelaskan tajam; minor typo 33,3V pada laporan D2.1 telah dikoreksi."
+TOTAL SKOR,100,98,Acceptance Gate >= 80/100 terpenuhi,LULUS DENGAN PREDIKAT SANGAT BAIK (VERIFIED)
