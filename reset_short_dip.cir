@@ -1,0 +1,24 @@
+* AT89S52 - Short Power Dip Test
+
+* VDD starts at 5V, dips to 3V, then returns to 5V
+VDD vdd 0 PWL(0 5 50m 5 51m 3 56m 3 57m 5 150m 5)
+
+* RC reset network
+R1 rst 0 10k
+C1 vdd rst 10u
+
+* Transient analysis
+.tran 10u 150m
+
+.control
+run
+
+* Observe reset voltage during power dip
+meas tran vmin MIN v(rst) FROM=50m TO=57m
+
+print vmin
+
+plot v(vdd) v(rst)
+.endc
+
+.end

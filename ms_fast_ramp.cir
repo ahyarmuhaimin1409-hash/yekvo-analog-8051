@@ -1,0 +1,13 @@
+* C8051F33x - Fast Ramp POR Model
+
+VDD vdd 0 PWL(0 0 0.5m 3.3 5m 3.3)
+VRST rst 0 PWL(0 0 0.65m 0 0.651m 3.3 5m 3.3)
+
+.tran 1u 5m
+
+.control
+run
+plot v(vdd) v(rst)
+.endc
+
+.end

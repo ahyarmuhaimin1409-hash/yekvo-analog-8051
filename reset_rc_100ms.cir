@@ -1,0 +1,28 @@
+* AT89S52 - RC Reset with Slow Power Ramp
+
+* VDD rises from 0V to 5V in 100ms
+VDD vdd 0 PWL(0 0 100m 5 250m 5)
+
+* RC reset network
+R1 rst 0 10k
+C1 vdd rst 10u
+
+* Transient analysis
+.tran 100u 250m
+
+.control
+run
+
+* Hypothetical reset threshold: 2.5V
+meas tran t_rise WHEN v(rst)=2.5 RISE=1
+meas tran t_fall WHEN v(rst)=2.5 FALL=1
+
+let pulse_duration = t_fall - t_rise
+
+print t_rise
+print t_fall
+print pulse_duration
+
+.endc
+
+.end

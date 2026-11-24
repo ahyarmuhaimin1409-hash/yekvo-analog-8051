@@ -1,0 +1,22 @@
+* AT89S52 - RC Reset with Fast Power Ramp
+
+* VDD rises from 0V to 5V in 1ms
+VDD vdd 0 PWL(0 0 1m 5 250m 5)
+
+* RC reset network
+R1 rst 0 10k
+C1 vdd rst 10u
+
+* Transient analysis
+.tran 100u 250m
+
+.control
+run
+
+* Hypothetical reset threshold: 2.5V
+meas tran t_release WHEN v(rst)=2.5 FALL=1
+
+plot v(vdd) v(rst)
+.endc
+
+.end

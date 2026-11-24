@@ -1,0 +1,13 @@
+* C8051F33x - Slow Ramp POR Model
+
+VDD vdd 0 PWL(0 0 100m 3.3 150m 3.3)
+VRST rst 0 PWL(0 0 1m 0 1.001m 3.3 150m 3.3)
+
+.tran 100u 150m
+
+.control
+run
+plot v(vdd) v(rst)
+.endc
+
+.end

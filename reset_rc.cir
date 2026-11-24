@@ -1,0 +1,29 @@
+* AT89S52 - Simple RC Reset Simulation
+
+* Power supply: 0V to 5V in 1ms
+VDD vdd 0 PWL(0 0 1m 5 20m 5)
+
+* RC reset network
+R1 rst 0 10k
+C1 vdd rst 10u
+
+* Transient analysis
+.tran 10u 1500m
+
+* Plot results
+
+.control
+run
+
+meas tran t_rise WHEN v(rst)=2.5 RISE=1
+meas tran t_fall WHEN v(rst)=2.5 FALL=1
+
+let pulse_duration = t_fall - t_rise
+
+print t_rise
+print t_fall
+print pulse_duration
+
+.endc
+
+.end

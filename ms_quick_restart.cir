@@ -1,0 +1,13 @@
+* C8051F33x - Quick Restart POR Model
+
+VDD vdd 0 PWL(0 0 1m 3.3 20m 3.3 21m 0 26m 0 27m 3.3 60m 3.3)
+VRST rst 0 PWL(0 0 0.65m 0 0.651m 3.3 20.999m 3.3 21m 0 26.65m 0 26.651m 3.3 60m 3.3)
+
+.tran 10u 60m
+
+.control
+run
+plot v(vdd) v(rst)
+.endc
+
+.end

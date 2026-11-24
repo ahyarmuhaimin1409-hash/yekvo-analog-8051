@@ -1,0 +1,24 @@
+* AT89S52 - Quick Power Cycle Test
+
+* Power ON, OFF, then ON again
+VDD vdd 0 PWL(0 0 1m 5 50m 5 51m 0 56m 0 57m 5 150m 5)
+
+* RC reset network
+R1 rst 0 10k
+C1 vdd rst 10u
+
+* Transient analysis
+.tran 10u 150m
+
+.control
+run
+
+* Measure reset voltage after second power-on
+meas tran vsecond MAX v(rst) FROM=57m TO=65m
+
+print vsecond
+
+plot v(vdd) v(rst)
+.endc
+
+.end
